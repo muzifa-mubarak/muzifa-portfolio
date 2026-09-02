@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #14161B;
+  --bg-alt: #1B1E25;
+  --panel: #20232B;
+  --paper: #ECE9DF;
+  --ink: #ECE9DF;
+  --ink-dim: #A6AAB4;
+  --ink-faint: #757A8A;
+  --accent: #E8A33D;
+  --accent2: #4FB0AE;
+  --line: rgba(236, 233, 223, 0.14);
+  --line-strong: rgba(236, 233, 223, 0.25);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(236, 233, 223, 0.2) #14161B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: #14161B;
+}
+
+/* Explicit high-contrast theme overrides for maximum clarity */
+.text-ink { color: #ECE9DF !important; }
+.text-inkDim { color: #A6AAB4 !important; }
+.text-inkFaint { color: #757A8A !important; }
+.text-accent { color: #E8A33D !important; }
+.text-accent2 { color: #4FB0AE !important; }
+
+.bg-bg { background-color: #14161B !important; }
+.bg-bgAlt { background-color: #1B1E25 !important; }
+.bg-panel { background-color: #20232B !important; }
+.bg-accent { background-color: #E8A33D !important; }
+.bg-accent2 { background-color: #4FB0AE !important; }
+
+.border-line { border-color: rgba(236, 233, 223, 0.14) !important; }
+.border-lineStrong { border-color: rgba(236, 233, 223, 0.25) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent2);
+  outline-offset: 3px;
+}
